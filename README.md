@@ -15,13 +15,14 @@ O projeto está todo em português, com o objetivo de facilitar o primeiro conta
 ## Instalação
 É necessário ter o Node.js e o NPM instalados em seu ambiente.
 Se desejar, instale também o MongoDB localmente, ou utilize o serviço gratuito [Cloud MongoDB](https://cloud.mongodb.com)
-Aí basta, carregar todas as dependências através do npm:
+
+Em seguida basta, carregar todas as dependências através do npm:
 ```sh
 npm i
 ```
 
 ### Dica para facilitar o recarregamento automático 
-Se possível, instale o Nodemon: Ele ficará monitorando as alterações nos arquivos e reiniciará automaticamente os scripts
+Se possível, instale o Nodemon: Ele ficará monitorando as alterações nos arquivos e reiniciará automaticamente o servidor.
 
 ```sh
 npm i -g nodemon
@@ -39,9 +40,9 @@ Defina no arquivo config.js as seguintes configurações iniciais:
     versaoAPI: '1.0.0'
 ```
 
-Acesse o Modelo na pasta _models_
-Visualize os Controladores na pasta _controllers_
-Consulte todas as rotas na pasta _routes_
+Acesse o Modelo na pasta _models_  
+Visualize os Controladores na pasta _controllers_  
+Consulte todas as rotas na pasta _routes_  
 
 Aí carregue no terminal o script:
 
@@ -49,7 +50,7 @@ Aí carregue no terminal o script:
 nodemon server.js
 ```
 
-_Para mais especificações, consulte a documentação dentro do próprio código fonte.
+_Para mais especificações, consulte a documentação dentro do próprio código fonte._
 
 ## Como testar a API
 
@@ -64,7 +65,7 @@ Utilize o POSTMAN ou ferramenta similar para fazer as chamadas, conforme exemplo
 | DELETE  | http://localhost:3001/produtos/5cf6bc592aed233868ef9809   | Remove os dados do produto a partir do ID passado |
 
 
-Ou se preferir, instale a extensão *REST Client* no Visual Studio Code e abra o arquivo correspondente a cada _controller_ na pasta http, clicando
+Ou se preferir, instale a extensão *REST Client* no _Visual Studio Code_ e abra o arquivo correspondente a cada _controller_ na pasta http, clicando
 no item _Send Request_.
 ![](/public/img/exemplo_rest.gif)
 
