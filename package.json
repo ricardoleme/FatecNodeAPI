@@ -1,0 +1,16 @@
+{
+  "name": "fatec-node-api",
+  "version": "1.0.0",
+  "description": "API REST em Node.js",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "author": "Prof. Ricardo Leme",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.2"
+  }
+}

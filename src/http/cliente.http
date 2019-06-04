@@ -1,0 +1,52 @@
+//Testar as requisições - Schema Cliente
+//Bye, Bye Postman :) (Mas claro, ainda dá para utilizá-lo se preferir)
+//Instale a extensão REST Client no Visual Studio Code para conseguir utilizar este recurso
+
+###
+// GET clientes
+@baseUrl = http://localhost:3001
+GET {{baseUrl}}/clientes
+
+###
+// GET clientes pelo ID
+@id = 5cf6c0ef2aed233868ef980b
+GET {{baseUrl}}/clientes/{{id}}
+
+###
+// GET clientes pelo texto (busca no índice: nome e email)
+@texto = JOSE 
+GET {{baseUrl}}/clientes/texto/{{texto}}
+
+###
+// POST clientes
+POST {{baseUrl}}/clientes
+Content-Type: application/json
+
+{
+    "nome": "José Ferraz de Almeida Júnior",
+    "documento": "423.546.500-39",
+    "endereco": "Rua Paula Souza, 438, Centro, Itu-SP",
+    "email": "almeidajunior3@uol.com.br",
+    "nascimento": "1850-05-08T16:00:00Z"
+}
+
+###
+// PUT clientes
+//substitua pelo seu ID ;)
+@idUpdate = 5ce8525d5a8e522ee4525f48
+PUT {{baseUrl}}/clientes/{{idUpdate}}
+Content-Type: application/json
+
+{    
+    "nome": "Pintor Almeida Júnior",
+    "documento": "219.453.750-35",
+    "endereco": "Rua Paula Souza, 438, Centro, Itu-SP",
+    "email": "almeidajunior@uol.com.br",
+    "nascimento": "1850-05-08T16:00:00Z"
+}
+
+###
+//DELETE clientes
+//substitua pelo seu ID ;)
+@idDelete = 5cf6c0ef2aed233868ef980b
+DELETE {{baseUrl}}/clientes/{{idDelete}}

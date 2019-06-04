@@ -1,0 +1,50 @@
+//Testar as requisições - Schema Cliente
+//Bye, Bye Postman :) (Mas claro, ainda dá para utilizá-lo se preferir)
+//Instale a extensão REST Client no Visual Studio Code para conseguir utilizar este recurso
+
+###
+// GET produtos
+@baseUrl = http://localhost:3001
+GET {{baseUrl}}/produtos
+
+###
+// GET produtos pelo ID
+@id = 5cf6bc592aed233868ef9809
+GET {{baseUrl}}/produtos/{{id}}
+
+###
+// GET produtos pelo texto (busca no índice: nome, descrição ou código de barras)
+@texto = sabao em po
+GET {{baseUrl}}/produtos/texto/{{texto}}
+
+###
+// POST produtos
+POST {{baseUrl}}/produtos
+Content-Type: application/json
+
+{
+    "nome": "Omo: Sabão em Pó OMO Multiação Poder Acelerador – 1kg",
+    "descricao": "Com o Detergente em Pó OMO Multiação Poder Acelerador – 1kg, as piores manchas, como manchas de sorvete de chocolate, são removidas até no ciclo rápido. O OMO Multiação é um produto de alta performance e garante roupas mais limpas e macias. Tenha essa experiência com o Detergente em Pó OMO Multiação Poder Acelerador – 1kg!",
+    "codigobarra": "7891234567895",
+    "preco": "14.92"
+}
+
+###
+// PUT produtos
+//substitua pelo seu ID ;)
+@idUpdate = 5ce8525d5a8e522ee4525f48
+PUT {{baseUrl}}/produtos/{{idUpdate}}
+Content-Type: application/json
+
+{
+    "nome": "Omo: Sabão em Pó OMO Multiação Poder Acelerador – 1kg",
+    "descricao": "Com o Detergente em Pó OMO Multiação Poder Acelerador – 1kg, as piores manchas, como manchas de sorvete de chocolate, são removidas até no ciclo rápido. O OMO Multiação é um produto de alta performance e garante roupas mais limpas e macias. Tenha essa experiência com o Detergente em Pó OMO Multiação Poder Acelerador – 1kg!",
+    "codigobarra": "7891234567895",
+    "preco": "18.75"
+}
+
+###
+//DELETE produtos
+//substitua pelo seu ID ;)
+@idDelete = 5ce848c24fd606254c5a0e28
+DELETE {{baseUrl}}/produtos/{{idDelete}}
