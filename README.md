@@ -5,15 +5,15 @@
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-Projeto utilizado nas aulas de Programação para a Internet na FATEC Itu. (Faculdade de Tecnologia Dom Amaury Castanho).
-A Fatec Itu é uma faculdade pública e gratuita do Centro Paula Souza, órgão pertencente ao Governo do Estado de São Paulo.
+Projeto utilizado nas aulas de Programação para a Internet na FATEC Itu. (Faculdade de Tecnologia Dom Amaury Castanho).  
+A Fatec Itu é uma faculdade pública e gratuita do Centro Paula Souza, órgão pertencente ao Governo do Estado de São Paulo.  
 
-O projeto está todo em português, com o objetivo de facilitar o primeiro contato com a tecnologia. :satisfied:
+O projeto está todo em português, com o objetivo de facilitar o primeiro contato com a tecnologia. :wink:
 
 ![](../header.png)
 
 ## Instalação
-É necessário ter o Node.js e o NPM instalados em seu ambiente.
+É necessário ter o Node.js e o NPM instalados em seu ambiente.  
 Se desejar, instale também o MongoDB localmente, ou utilize o serviço gratuito [Cloud MongoDB](https://cloud.mongodb.com)
 
 Em seguida basta, carregar todas as dependências através do npm:
