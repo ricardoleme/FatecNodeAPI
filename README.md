@@ -14,6 +14,7 @@ O projeto está todo em português, com o objetivo de facilitar o primeiro conta
 
 ## Instalação
 É necessário ter o Node.js e o NPM instalados em seu ambiente.
+Se desejar, instale também o MongoDB localmente, ou utilize o serviço gratuito [Cloud MongoDB](https://cloud.mongodb.com)
 Aí basta, carregar todas as dependências através do npm:
 ```sh
 npm i
