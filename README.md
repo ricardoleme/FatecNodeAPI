@@ -67,15 +67,6 @@ Ou se preferir, instale a extensão *REST Client* no Visual Studio Code e abra o
 no item _Send Request_.
 ![](/public/img/exemplo_rest.gif)
 
-## Configuração para Desenvolvimento
-
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
-
-```sh
-make install
-npm test
-```
-
 ## Histórico de lançamentos
 
 * 0.0.1
@@ -88,7 +79,7 @@ Prof. Ricardo Leme – [@ricardoleme](https://twitter.com/ricardorleme) – rica
 
 Distribuído sob a licença [MIT](https://opensource.org/licenses/MIT).
 
-[https://github.com/yourname/github-link](https://github.com/ricardoleme/)
+[https://github.com/ricardoleme/FatecNodeAPI](https://github.com/ricardoleme/FatecNodeAPI)
 
 ## Contributing
 
