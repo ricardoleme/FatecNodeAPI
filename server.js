@@ -25,9 +25,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-
-//mongoose.Promise = global.Promise;
-
 //Atribuindo as configurações do MongoDB
 function setRunValidators() {
     this.setOptions({ runValidators: true, new: true });
