@@ -5,5 +5,5 @@ module.exports = {
     urlMongodbRemoto: 'mongodb+srv://usuario:senha@suaStringConexão',
     portaServidor: 3000 ,
     nomeAPI: 'Projeto REST Exemplo - Fatec Itu',
-    versaoAPI: '1.1.0'
+    versaoAPI: '1.1.1'
 }
