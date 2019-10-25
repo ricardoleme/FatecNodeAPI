@@ -25,7 +25,8 @@ const ProdutoSchema = mongoose.Schema({
             message: props => props.value +' não é um código de barras válido!'
     }    
 },
-    preco: Number
+    preco: Number,
+    grupo: Object
 }, {
         timestamps: true
     });

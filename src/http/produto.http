@@ -4,12 +4,12 @@
 
 ###
 // GET produtos
-@baseUrl = http://localhost:3001
+@baseUrl = http://localhost:3000
 GET {{baseUrl}}/produtos
 
 ###
 // GET produtos pelo ID
-@id = 5cf6bc592aed233868ef9809
+@id = 5db341b8a6e4394ea5640325
 GET {{baseUrl}}/produtos/{{id}}
 
 ###
@@ -26,25 +26,26 @@ Content-Type: application/json
     "nome": "Omo: Sabão em Pó OMO Multiação Poder Acelerador – 1kg",
     "descricao": "Com o Detergente em Pó OMO Multiação Poder Acelerador – 1kg, as piores manchas, como manchas de sorvete de chocolate, são removidas até no ciclo rápido. O OMO Multiação é um produto de alta performance e garante roupas mais limpas e macias. Tenha essa experiência com o Detergente em Pó OMO Multiação Poder Acelerador – 1kg!",
     "codigobarra": "7891234567895",
-    "preco": "14.92"
+    "preco": "14.92",
+    "grupo": "5db34c769e093d5ed38d0543"
 }
 
 ###
 // PUT produtos
 //substitua pelo seu ID ;)
-@idUpdate = 5ce8525d5a8e522ee4525f48
+@idUpdate = 5db34d0f27a5cb5fcc5fbeef
 PUT {{baseUrl}}/produtos/{{idUpdate}}
 Content-Type: application/json
 
 {
     "nome": "Omo: Sabão em Pó OMO Multiação Poder Acelerador – 1kg",
     "descricao": "Com o Detergente em Pó OMO Multiação Poder Acelerador – 1kg, as piores manchas, como manchas de sorvete de chocolate, são removidas até no ciclo rápido. O OMO Multiação é um produto de alta performance e garante roupas mais limpas e macias. Tenha essa experiência com o Detergente em Pó OMO Multiação Poder Acelerador – 1kg!",
-    "codigobarra": "7891234567895",
+    "codigobarra": "7891234568965",
     "preco": "18.75"
 }
 
 ###
 //DELETE produtos
 //substitua pelo seu ID ;)
-@idDelete = 5ce848c24fd606254c5a0e28
+@idDelete = 5db34d0f27a5cb5fcc5fbeef
 DELETE {{baseUrl}}/produtos/{{idDelete}}

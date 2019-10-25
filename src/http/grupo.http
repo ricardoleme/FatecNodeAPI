@@ -1,0 +1,42 @@
+//Testar as requisições - Schema Cliente
+//Bye, Bye Postman :) (Mas claro, ainda dá para utilizá-lo se preferir)
+//Instale a extensão REST Client no Visual Studio Code para conseguir utilizar este recurso
+
+###
+// GET grupos
+@baseUrl = http://localhost:3000
+GET {{baseUrl}}/grupos
+
+###
+// GET grupos pelo ID
+@id = 5db346453d0480545c17a5b7
+GET {{baseUrl}}/grupos/{{id}}
+
+
+###
+// POST grupos
+POST {{baseUrl}}/grupos
+Content-Type: application/json
+
+{
+    "nome": "Material de Limpeza"
+}
+
+
+###
+// PUT grupos
+//substitua pelo seu ID ;)
+@idUpdate = 5db34c349e093d5ed38d0541
+PUT {{baseUrl}}/grupos/{{idUpdate}}
+Content-Type: application/json
+
+{
+    "nome": "Material de Limpeza",
+    "status": "inativo"    
+}
+
+###
+//DELETE grupos
+//substitua pelo seu ID ;)
+@idDelete = 5db34c349e093d5ed38d0541
+DELETE {{baseUrl}}/grupos/{{idDelete}}

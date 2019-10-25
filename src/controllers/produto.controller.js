@@ -2,15 +2,7 @@
 const Produto = require('../models/produto.model.js');
 
 //Criando um novo produto
-exports.create = (req, res) => {
-    // Validando se veio algo junto a requisição
-    if(!req.body) {
-        
-        return res.status(400).send({
-            message: "Conteúdo para criar o produto não pode estar vazio!"
-        });
-    }
-
+exports.incluir = (req, res) => {   
     // Criando o produto com os dados da requisição
     const produto = new Produto(req.body);
 
@@ -21,7 +13,7 @@ exports.create = (req, res) => {
     }).catch(err => {        
         if(err.message.indexOf('duplicate key error') !== -1){
             res.status(500).send({
-                message: "O documento informado já existe na base de dados." ||  err.message 
+                message: "O registro informado já existe na base de dados. " &&  err.message 
             });
         } else
         res.status(500).send({
@@ -31,7 +23,7 @@ exports.create = (req, res) => {
 };
 
 // Obtendo todos os produtos do banco de dados
-exports.findAll = (req, res) => {
+exports.listarTodos = (req, res) => {
     Produto.find()
     .sort({nome:1}) //para trazer em ordem descendente, passe -1    
     .then(produtos => {
@@ -43,8 +35,9 @@ exports.findAll = (req, res) => {
     });
 };
 
+
 // Obtendo todos os produtos a partir do nome, descrição ou código de barra
-exports.findByTexto = (req, res) => {
+exports.listarPeloTexto = (req, res) => {
     const termo = req.params.produtoTexto
     Produto.find({
         $text: { $search: termo }, //iremos obter o termo a ser pesquisado e aplicá-lo em nosso índice.
@@ -62,7 +55,7 @@ exports.findByTexto = (req, res) => {
 
 
 // Localizar um único produto a partir do ID
-exports.findOne = (req, res) => {
+exports.listarPeloId = (req, res) => {
     Produto.findById(req.params.produtoId)
     .then(produto => {
         if(!produto) {
@@ -84,23 +77,10 @@ exports.findOne = (req, res) => {
 };
 
 // Alterando um produto
-exports.update = (req, res) => {
-       // Validando se veio algo junto a requisição
-    if(!req.body) {
-        return res.status(400).send({
-            message: "Conteúdo para alterar o produto não pode estar vazio"
-        });
-    }
-
-    // Localiza e alteramos os dados do produto a partir do conteúdo da requisição
+exports.alterar = (req, res) => {   
+    // Localiza e alteramos os dados do produto a partir do conteúdo da requisição       
     Produto.findByIdAndUpdate(req.params.produtoId, 
-        {
-            nome:  req.body.nome,
-            cpf: req.body.cpf,
-            endereco: req.body.endereco,
-            email: req.body.email,
-            nascimento: req.body.nascimento       
-        }, {new: true}) //iremos trazer o resultado do novo registro alterado
+        req.body) 
     .then(produto => {
         if(!produto) {
             return res.status(404).send({
@@ -108,36 +88,26 @@ exports.update = (req, res) => {
             });
         }
         res.send(produto);
-    }).catch(err => {
-        if(err.kind === 'ObjectId') {
-            return res.status(404).send({
-                message: "Produto não encontrado com o Id " + req.params.produtoId
-            });                
-        }
+    }).catch(err => {        
         return res.status(500).send({
-            message: "Aconteceu algo errado ao tentar alterar o produto com o Id " + req.params.produtoId
+            message: "Não foi possível alterar o produto com o Id " + req.params.produtoId + " - " +err.message
         });
     });
 };
 
 // Apaga um determinado produto a partir do ID passado
-exports.delete = (req, res) => {
+exports.apagar = (req, res) => {
     Produto.findByIdAndRemove(req.params.produtoId)
     .then(produto => {
         if(!produto) {
             return res.status(404).send({
                 message: "Produto não encontrado com o Id " + req.params.produtoId
             });
-        }
+        }       
         res.send({message: "Produto removido com sucesso!"});
-    }).catch(err => {
-        if(err.kind === 'ObjectId' || err.name === 'NotFound') {
-            return res.status(404).send({
-                message: "Produto não encontrado com o Id " + req.params.produtoId
-            });                
-        }
+    }).catch(err => {       
         return res.status(500).send({
-            message: "Não foi possível apagar o produto com o Id " + req.params.produtoId
+            message: "Não foi possível apagar o produto com o Id " + req.params.produtoId + " - " +err.message
         });
     });
 };
